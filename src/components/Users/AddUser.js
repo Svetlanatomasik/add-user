@@ -31,6 +31,14 @@ const AddUser = (props) => {
       return;
     }
     props.onAddUser(enteredName, enteredUserAge);
+    nameInputRef.current.value = "";
+    ageInputRef.current.value = "";
+
+    // During the process,I lost resetting logic. 
+    // I manipulate here with DOM without React
+    // which is okay here
+    // in the context of a input field value
+    // where I wanna reset the value entered by a user.
   };
 
   const errorHandler = () => {
